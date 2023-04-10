@@ -1,0 +1,36 @@
+{
+  "name": "Funiro",
+  "version": "1.0.0",
+  "description": "project ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp start",
+    "build": "gulp prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romeo198808Funiro.git"
+  },
+  "author": "romeo198808",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/romeo198808/Funiro/issues"
+  },
+  "homepage": "https://github.com/romeo198808/Funiro#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-copy": "^4.0.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-scss": "^1.4.0",
+    "gulp-svgo": "^2.2.1",
+    "gulp-svgstore": "^9.0.0",
+    "gulp-webp": "^4.0.1"
+  }
+}
