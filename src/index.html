@@ -4,9 +4,108 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta name="description" content="Hello, this is very interesting landing page about rooms">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Funiro-Landing Page</title>
 </head>
 <body>
-  
+  <header class="header">
+    <a href="#" class="header__logo logo">Funiro. </a>
+    <nav class="header__nav nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#" class="nav__link">Products</a></li>
+        <li class="nav__item">
+          <ul class="nav__inner-list">
+            <li class="nav__inner-item"><a href="#" class="nav__inner-link">Bathroom</a></li>
+            <li class="nav__inner-item"><a href="#" class="nav__inner-link">Bathroom</a></li>
+            <li class="nav__inner-item"><a href="#" class="nav__inner-link">Bathroom</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#" class="nav__link">Rooms</a></li>
+        <li class="nav__item">
+          <ul class="nav__inner-list">
+            <li class="nav__inner-item"><a href="#" class="nav__inner-link">Bathroom</a></li>
+            <li class="nav__inner-item"><a href="#" class="nav__inner-link">Bathroom</a></li>
+            <li class="nav__inner-item"><a href="#" class="nav__inner-link">Bathroom</a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="#" class="nav__link">Inspirations</a>
+      <input type="search" placeholder="Search for minimalist chair">
+      <ul class="nav__list user__list">
+        <li class="user__item"><a href="#" class="user__link">Favorites
+          <svg width="20px" height="17px" class="user__icon user__icon--favorites">
+            <use href:xlink="img/icon/sprite.svg#icon-favorites"></use>
+          </svg>
+        </a></li>
+        <li class="user__item"><a href="#" class="user__link">Basket
+          <svg width="24px" height="24px" class="user__icon user__icon--basket">
+            <use href:xlink="img/icon/sprite.svg#icon-basket"></use>
+          </svg>
+        </a></li>
+        <li class="user__item"><a href="#" class="user__link">User
+          <img class="user__icon user__icon--img" src="img/icon/icon-user.jpg" alt="foto">
+        </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <h1 class="main__title visually-hidden">Funiro</h1>
+    <section class="slider">
+      <h2 class="slider__title visually-hidden">Slider</h2>
+      <ul class="slider__crumbs-list">
+        <li class="slider__crumbs-item slider__crumbs-item--active">1</li>
+        <li class="slider__crumbs-item">2</li>
+        <li class="slider__crumbs-item">3</li>
+        <li class="slider__crumbs-item">4</li>
+      </ul>
+      <ul class="slider__button-list">
+        <li class="slider__button-item"><button type="button" class="slider__button slider__button--previous">Previous</button></li>
+        <li class="slider__button-item"><button type="button" class="slider__button slider__button--next">Next</button></li>
+      </ul>
+      <ul class="slider__img-list">
+        <li class="slider__img-item">
+          <picture>
+            <img class="slider__img" src="img/content/slide-1.jpg" alt="slide">
+          </picture>
+        </li>
+        <li class="slider__img-item">
+          <picture>
+            <img class="slider__img" src="img/content/slide-1.jpg" alt="slide">
+          </picture>
+        </li>
+        <li class="slider__img-item">
+          <picture>
+            <img class="slider__img" src="img/content/slide-1.jpg" alt="slide">
+          </picture>
+        </li>
+        <li class="slider__img-item">
+          <picture>
+            <img class="slider__img" src="img/content/slide-1.jpg" alt="slide">
+          </picture>
+        </li>
+      </ul>
+      <div class="slider__info info">
+        <p class="info__name">Bohaus</p>
+        <p class="info__text">Luxury big sofa 2-seat</p>
+        <p class="info__price">Rp 17.000.000</p>
+        <a href="#" class="info__link">
+          <svg width="15px" height="11px" class="info__icon"><use xlink:href="img/icon/sprite.svg#icon-arrrow"></use></svg>
+        </a>
+      </div>
+      <aside class="slider__advertisement advertisement">
+        <h2 class="advertisement__title">High-quality furniture just For you</h2>
+        <p class="advertisement__text">
+           Our furniture is made from selected and best quality materials that are suitable for your dream home
+        </p>
+        <a href="#" class="advertisement__button button__link">Shop now</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer"></footer>
 </body>
 </html>

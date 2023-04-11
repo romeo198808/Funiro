@@ -1,7 +1,7 @@
 "use strict"
 
 let gulp = require('gulp');
-let scss = require('gulp-scss');
+let sass = require('gulp-sass')(require('sass'));
 let plumber =require('gulp-plumber');
 let cssmin = require('gulp-cssmin');
 let rename = require('gulp-rename');
@@ -19,9 +19,9 @@ let server = require('browser-sync').create();
 
 
 gulp.task('style', function(){
-	return gulp.src('src/scss/style.scss')
+	return gulp.src('src/sass/style.scss')
 	.pipe(plumber())
-	.pipe(scss())
+	.pipe(sass())
 	.pipe(autoprefixer())
 	.pipe(gulp.dest('src/css'))
 	.pipe(cssmin())
@@ -31,10 +31,10 @@ gulp.task('style', function(){
 });
 
 gulp.task('svg-sprite', ()=> {
-	return gulp.src('src/img/icon-*.svg')
+	return gulp.src('src/img/**/icon-*.svg')
 	.pipe(svgstore({inlineSvg: true}))
 	.pipe(rename('sprite.svg'))
-	.pipe(gulp.dest('src/img'))
+	.pipe(gulp.dest('src/img/icon'))
 });
 
 gulp.task('webp', ()=> {
@@ -93,7 +93,7 @@ gulp.task('serve', ()=> {
 		cors: true,
 		ui: false
 	});
-	gulp.watch('src/scss/**/*.scss', gulp.series('style')).on('change', server.reload);
+	gulp.watch('src/s/**/*.scss', gulp.series('style')).on('change', server.reload);
 	gulp.watch('src/*.html').on('change', server.reload);
 });
 
