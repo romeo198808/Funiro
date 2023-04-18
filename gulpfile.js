@@ -1,102 +1,49 @@
 "use strict"
 
-let gulp = require('gulp');
-let sass = require('gulp-sass')(require('sass'));
-let plumber =require('gulp-plumber');
-let cssmin = require('gulp-cssmin');
-let rename = require('gulp-rename');
-let autoprefixer = require('gulp-autoprefixer');
-let svgo = require('gulp-svgo');
-let imagemin = require('gulp-imagemin');
-let webp = require('gulp-webp');
-let svgstore = require('gulp-svgstore');
-let clean  = require('gulp-clean');
-let copy = require('gulp-copy');
-const { use } = require('browser-sync');
-let server = require('browser-sync').create();
+import gulp from "gulp";
+
+import {path} from "./gulp/config/path.js";
+
+import {plugins} from "./gulp/config/plugins.js";
+
+global.app = {
+	isBuild: process.argv.includes('--build'),
+	isDef: !process.argv.includes('--build'),
+	path: path,
+	gulp: gulp,
+	plugins: plugins,
+}
+
+import {copy} from "./gulp/tasks/copy.js";
+import {reset} from "./gulp/tasks/reset.js";
+import {html} from "./gulp/tasks/html.js";
+import {server} from "./gulp/tasks/server.js";
+import {scss} from "./gulp/tasks/scss.js";
+import {js} from "./gulp/tasks/js.js";
+import {images} from "./gulp/tasks/images.js";
+import {otfToTtf, ttfToWoff, fontsStyle} from "./gulp/tasks/fonts.js";
+import {svgSprit} from "./gulp/tasks/svgSprite.js";
 
 
+function watcher() {
+	gulp.watch(path.watch.files, copy);
+	gulp.watch(path.watch.html, html);
+	gulp.watch(path.watch.scss, scss);
+	gulp.watch(path.watch.js, js);
+	gulp.watch(path.watch.images, images);
 
+}
+export {svgSprit};
 
-gulp.task('style', function(){
-	return gulp.src('src/sass/style.scss')
-	.pipe(plumber())
-	.pipe(sass())
-	.pipe(autoprefixer())
-	.pipe(gulp.dest('src/css'))
-	.pipe(cssmin())
-	.pipe(rename('style.min.css'))
-	.pipe(gulp.dest('src/css'))
-	.pipe(server.stream())
-});
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
-gulp.task('svg-sprite', ()=> {
-	return gulp.src('src/img/**/icon-*.svg')
-	.pipe(svgstore({inlineSvg: true}))
-	.pipe(rename('sprite.svg'))
-	.pipe(gulp.dest('src/img/icon'))
-});
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
 
-gulp.task('webp', ()=> {
-	return gulp.src('src/img/*.{jpg,png}')
-	.pipe(webp())
-	.pipe(gulp.dest('src/img'))
-});
+const dev = gulp.series(reset, mainTasks,gulp.parallel(watcher, server));
 
-gulp.task('image', ()=> {
-	return gulp.src('src/img/*.{png,jpg,svg}')
-	.pipe(imagemin([
-		imagemin.mozjpeg({quality: 70, progressive: true}),
-		imagemin.optipng({optimizationLevel:3}),
-		imagemin.svgo()
-	]))
-	.pipe(gulp.dest('src/img'))
-});
+const build = gulp.series(reset, mainTasks);
 
-gulp.task('svgo', ()=> {
-	return gulp.src('src/img/*.svg')
-	.pipe(svgo())
-	.pipe(gulp.dest('src/img'))
-	.pipe(server.stream())
-});
+export {dev};
+export {build};
 
-gulp.task('normalize', ()=> {
-	return gulp.src('src/css/normalize.css')
-	.pipe(cssmin())
-	.pipe(rename('normalize.min.css'))
-	.pipe(gulp.dest('src/css'))
-	.pipe(server.stream())
-});
-
-gulp.task('clean', ()=> {
-	return gulp.src('prod')
-	.pipe(clean());
-});
-
-gulp.task('copy', ()=> {
-	return gulp.src([
-		'src/*.html',
-		'src/css/**/*.css',
-		'src/fonts/**/*.*',
-		'src/img/**/*.*',
-		'src/js/**/*.js',
-	], {base:'src'})
-	// .pipe(copy('prod'));
-	.pipe(gulp.dest('prod/'));
-});
-
-gulp.task('serve', ()=> {
-	server.init({
-		server: "src",
-		notify: false,
-		open: true,
-		cors: true,
-		ui: false
-	});
-	gulp.watch('src/s/**/*.scss', gulp.series('style')).on('change', server.reload);
-	gulp.watch('src/*.html').on('change', server.reload);
-});
-
-gulp.task('start', gulp.series('image', 'webp', 'svg-sprite', 'style', 'serve'));
-
-gulp.task('prod', gulp.series('clean', 'image', 'webp', 'svg-sprite', 'style', 'copy'));
+gulp.task('default', dev);
