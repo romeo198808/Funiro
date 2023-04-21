@@ -17,3 +17,21 @@ export function isWebp(params) {
     }
     });
 }
+
+export function openMenu() {
+  const menuButton = document.querySelector(".menu__button");
+  const nav = document.querySelector(".nav");
+
+  menuButton.addEventListener('click', function(evt) {
+    console.log ('hello');
+    evt.preventDefault;
+    let toggle = nav.classList.contains('nav--close');
+    if (toggle) {
+      nav.classList.remove('nav--close');
+      nav.classList.add('nav--open');
+    } else {
+      nav.classList.remove('nav--open');
+      nav.classList.add('nav--close');
+    }
+  })
+}

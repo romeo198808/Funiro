@@ -1,5 +1,23 @@
 .nav__list {
-  height: 0 ;
-
+  display: flex;
+  flex-direction: column;
+  transition: height 1s linear;
   overflow: hidden;
+
+}
+.nav--open .nav__list {
+  height: 500px;
+}
+
+.nav--close .nav__list {
+  height: 0 ;
+}
+
+.nav__inner-list {
+  display: none;
+}
+.nav__item {
+  &:last-child {
+    margin-top: auto;
+  }
 }
