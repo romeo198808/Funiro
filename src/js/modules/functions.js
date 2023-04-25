@@ -20,18 +20,20 @@ export function isWebp(params) {
 
 export function openMenu() {
   const menuButton = document.querySelector(".menu__button");
-  const nav = document.querySelector(".nav");
+  const header = document.querySelector(".header");
+  const main = document.querySelector('body');
 
   menuButton.addEventListener('click', function(evt) {
-    console.log ('hello');
     evt.preventDefault;
-    let toggle = nav.classList.contains('nav--close');
+    let toggle = header.classList.contains('header--close');
     if (toggle) {
-      nav.classList.remove('nav--close');
-      nav.classList.add('nav--open');
+      header.classList.remove('header--close');
+      header.classList.add('header--open');
+      main.classList.add('lock');
     } else {
-      nav.classList.remove('nav--open');
-      nav.classList.add('nav--close');
+      header.classList.remove('header--open');
+      header.classList.add('header--close');
+      main.classList.remove('lock');
     }
   })
 }

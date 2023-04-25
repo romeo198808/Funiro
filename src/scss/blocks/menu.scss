@@ -1,8 +1,4 @@
- .menu {
-  position: absolute;
-  right: 6.25%;
-  top: 15px;
- }
+ 
 
  .menu__button {
   position: relative;
@@ -24,24 +20,25 @@
     height: 3px;
 
     background-color: $buttonColor;
+    transition: all 0.2s ease-in-out;
   }
  
  
 }
 
- .nav--close .menu__button {
+ .header--close .menu__button {
   &::after {
     top: 0;
     left: 0;
 
-    box-shadow: 0 11px 0 $buttonColor,
-                0 22px 0 $buttonColor;
+    box-shadow: 0 11px 0 $buttonColor;
   }
   &::before {
-    display: none;
+    bottom: 0;
+    left: 0;
   }
  }
- .nav--open .menu__button {
+ .header--open .menu__button {
   &::after {
     top: 11px;
     left: 0;
