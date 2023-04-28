@@ -33,7 +33,7 @@ body {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -135,11 +135,16 @@ input[type=radio].visually-hidden {
 
 .nav__list {
   padding: 0 6.25%;
+  padding-bottom: 20px;
   font-size: 18px;
 }
 
 .nav__item {
   margin-top: 10px;
+  position: relative;
+}
+.nav__item:last-child {
+  margin-top: 100px;
 }
 
 .nav__link {
@@ -183,8 +188,52 @@ input[type=radio].visually-hidden {
   transition: left 0.3s ease;
 }
 
-.nav__item:last-child {
-  margin-top: auto;
+.nav__search {
+  margin: 0;
+  padding: 0;
+  padding: 0 10px 0 40px;
+  width: 250px;
+  height: 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #616161;
+  border: none;
+}
+.nav__search::-webkit-input-placeholder {
+  font-size: 14px;
+  color: #616161;
+}
+.nav__search::-moz-placeholder {
+  font-size: 14px;
+  color: #616161;
+}
+.nav__search:-ms-input-placeholder {
+  font-size: 14px;
+  color: #616161;
+}
+.nav__search::-ms-input-placeholder {
+  font-size: 14px;
+  color: #616161;
+}
+.nav__search::placeholder {
+  font-size: 14px;
+  color: #616161;
+}
+
+.nav__submit {
+  position: absolute;
+  left: 12.5px;
+  top: 7px;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+}
+.nav__submit--img {
+  display: block;
 }
 
 .menu__button {
@@ -233,4 +282,31 @@ input[type=radio].visually-hidden {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.user__list {
+  color: #3a3a3a;
+}
+
+.user__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+}
+
+.user__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
 }

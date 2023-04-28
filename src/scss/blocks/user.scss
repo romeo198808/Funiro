@@ -1,0 +1,17 @@
+.user__list {
+  color: $fontColor;
+}
+.user__link {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+
+  margin-top: 5px;
+}
+.user__icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  
+}
