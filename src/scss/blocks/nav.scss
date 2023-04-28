@@ -22,12 +22,17 @@
 
 .nav__list {
   padding: 0 6.25%;
+  padding-bottom: 20px;
 
   font-size: 18px;
 }
 
 .nav__item {
   margin-top: 10px;
+  position: relative;
+  &:last-child {
+    margin-top: 100px;
+  }
 }
 
 .nav__link {
@@ -73,8 +78,35 @@
   transition: left 0.3s ease;
 
 }
-.nav__item {
-  &:last-child {
-    margin-top: auto;
+
+.nav__search {
+  @include reset;
+  padding: 0 10px 0 40px;
+  width: 250px;
+  height: 25px;
+  box-sizing: border-box;
+
+  color: #616161;
+
+  border: none;
+  &::placeholder {
+    font-size: 14px;
+    color: #616161;
+  }
+}
+.nav__submit {
+  position: absolute;
+  left: 12.5px;
+  top: 7px;
+  width: 15px;
+  height: 15px;
+  @include reset;
+
+  font-size: 0;
+
+  border: none;
+  background-color: transparent;
+  &--img {
+    display: block;
   }
 }
