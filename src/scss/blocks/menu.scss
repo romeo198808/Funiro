@@ -53,3 +53,8 @@
  }
  }
  
+ @media(min-width: $tablet){
+  .menu {
+    display: none;
+  }
+ }

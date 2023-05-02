@@ -15,3 +15,14 @@
   margin-right: 10px;
   
 }
+
+@media(min-width: $tablet){
+  .user__list {
+    display: flex;
+
+    font-size: 0;
+  }
+  .user__link {
+    margin: 0;
+  }
+}

@@ -20,4 +20,22 @@
   background-image: linear-gradient(90deg, $mainColor 0%, $mainColor 66%,$secondColor 66%, $secondColor 100%);
 
 }
+@media(min-width: $tablet){
+  .header {
+    position: relative;
+    z-index: 0;
+    display: flex;
 
+    min-height: 100px;
+
+    background-image: linear-gradient(90deg, $mainColor 0%, $mainColor 66%,$secondColor 66%, $secondColor 100%);
+
+  }
+  .wrapper {
+    padding: 20px 0 0 14%;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background-image: none;
+  }
+}
