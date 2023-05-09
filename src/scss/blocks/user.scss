@@ -12,8 +12,19 @@
 .user__icon {
   width: 24px;
   height: 24px;
-  margin-right: 10px;
-  
+  margin-right: 15px;
+
+  fill: $secondColor;
+  transition: all 0.2s linear;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+  &--favorites:hover {
+    fill: red;
+
+  }
+ 
 }
 
 @media(min-width: $tablet){
@@ -24,5 +35,20 @@
   }
   .user__link {
     margin: 0;
+  }
+}
+@media(min-width: $desktop){
+  .user__list {
+    width: 155px;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .user__icon {
+    margin: 0;
+    &--user {
+      width: 40px;
+      height: 40px;
+    }
   }
 }

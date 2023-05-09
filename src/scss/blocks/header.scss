@@ -32,10 +32,18 @@
 
   }
   .wrapper {
-    padding: 20px 0 0 14%;
+    padding: 20px 0 0 10%;
     justify-content: flex-start;
     align-items: flex-start;
 
     background-image: none;
+  }
+}
+@media(min-width: $desktop){
+  .header {
+    min-height: 221px;
+  }
+  .wrapper {
+    padding: 51px 0 0 14%;
   }
 }
