@@ -69,16 +69,18 @@
 }
 
 .nav__inner-list {
-  position: relative;
+  position: absolute;
   left: -1000%;
   z-index: 0;
 
+  width: 100px;
   padding: 0 8%;
 
   opacity: 0;
   transition: left 0.3s ease;
   &:hover, 
   &:focus {
+    position: relative;
     left: 0;
     opacity: 1;
   }
