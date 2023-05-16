@@ -485,6 +485,13 @@ input[type=radio].visually-hidden {
   background-image: -o-linear-gradient(left, #F9F1E7 0%, #F9F1E7 66%, #FCF8F3 66%, #FCF8F3 100%);
   background-image: linear-gradient(90deg, #F9F1E7 0%, #F9F1E7 66%, #FCF8F3 66%, #FCF8F3 100%);
 }
+.slider .slider__crumbs-list {
+  position: absolute;
+  z-index: 10;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -84px;
+}
 
 .slider__wrapper {
   position: relative;
@@ -508,4 +515,89 @@ input[type=radio].visually-hidden {
 
 .slider__img {
   width: 100%;
+}
+
+.slider__crumbs-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slider__crumbs-item {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  margin-right: 20px;
+  font-size: 0;
+  border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.slider__crumbs-item:last-child {
+  margin-right: 0;
+}
+.slider__crumbs-item::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 11px;
+  height: 11px;
+  background-color: #D8D8D8;
+  border-radius: 50%;
+}
+.slider__crumbs-item--active {
+  border: 1px solid #E89F71;
+}
+.slider__crumbs-item--active::before {
+  background-color: #E89F71;
+}
+.slider__crumbs-item:hover, .slider__crumbs-item:focus {
+  border: 1px solid #E89F71;
+}
+
+.slider__button {
+  position: absolute;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  width: 38px;
+  height: 38px;
+  font-size: 0;
+  border-radius: 50%;
+  border: 1px solid #E89F71;
+  background-color: transparent;
+  outline: none;
+}
+.slider__button--next {
+  right: 20px;
+  top: 20px;
+}
+.slider__button--previous {
+  left: 20px;
+  top: 20px;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.slider__button::after, .slider__button::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: rgba(232, 159, 113, 0.5019607843);
+}
+.slider__button::after {
+  top: 13px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.slider__button::before {
+  bottom: 13px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }

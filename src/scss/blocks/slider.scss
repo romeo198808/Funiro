@@ -2,6 +2,15 @@
   margin-top: 60px;
 
   background-image: linear-gradient(90deg, $mainColor 0%, $mainColor 66%,$secondColor 66%, $secondColor 100%);
+  & .slider__crumbs-list {
+    position: absolute;
+    z-index: 10;
+    bottom: 10px;
+    left: 50%;
+
+    margin-left: -84px;
+
+  }
 }
 .slider__wrapper {
   position: relative;
@@ -16,10 +25,6 @@
 .slider__img-item {
   width: 100%;
   flex-shrink: 0;
-  // &--activ {
-  //   position: relative;
-  //   left: 0;
-  // }
 }
 .slider__img {
   width: 100%;
