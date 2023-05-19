@@ -73,6 +73,12 @@ input[type=radio].visually-hidden {
 }
 
 .header {
+  background-image: -webkit-gradient(linear, left top, right top, from(#F9F1E7), color-stop(66%, #F9F1E7), color-stop(66%, #FCF8F3), to(#FCF8F3));
+  background-image: -o-linear-gradient(left, #F9F1E7 0%, #F9F1E7 66%, #FCF8F3 66%, #FCF8F3 100%);
+  background-image: linear-gradient(90deg, #F9F1E7 0%, #F9F1E7 66%, #FCF8F3 66%, #FCF8F3 100%);
+}
+
+.header__wrap {
   position: fixed;
   top: 0;
   left: 0;
@@ -102,9 +108,9 @@ input[type=radio].visually-hidden {
 }
 
 @media (min-width: 768px) {
-  .header {
+  .header__wrap {
     position: relative;
-    z-index: 0;
+    z-index: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -125,8 +131,10 @@ input[type=radio].visually-hidden {
   }
 }
 @media (min-width: 1440px) {
-  .header {
+  .header__wrap {
+    max-width: 1440px;
     min-height: 221px;
+    margin: 0 auto;
   }
   .wrapper {
     padding: 51px 0 0 14%;
@@ -480,6 +488,7 @@ input[type=radio].visually-hidden {
   }
 }
 .slider {
+  position: relative;
   margin-top: 60px;
   background-image: -webkit-gradient(linear, left top, right top, from(#F9F1E7), color-stop(66%, #F9F1E7), color-stop(66%, #FCF8F3), to(#FCF8F3));
   background-image: -o-linear-gradient(left, #F9F1E7 0%, #F9F1E7 66%, #FCF8F3 66%, #FCF8F3 100%);
@@ -488,7 +497,7 @@ input[type=radio].visually-hidden {
 .slider .slider__crumbs-list {
   position: absolute;
   z-index: 10;
-  bottom: 10px;
+  top: 10px;
   left: 50%;
   margin-left: -84px;
 }
@@ -515,8 +524,86 @@ input[type=radio].visually-hidden {
 
 .slider__img {
   width: 100%;
+  max-height: 553px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
+.slider__button {
+  position: absolute;
+  z-index: 10;
+}
+.slider__button--next {
+  right: 20px;
+  top: 10px;
+}
+.slider__button--previous {
+  left: 20px;
+  top: 10px;
+}
+
+@media (min-width: 768px) {
+  .slider {
+    margin-top: 0;
+  }
+  .slider .slider__crumbs-list {
+    bottom: auto;
+    top: 20px;
+  }
+  .slider__button {
+    z-index: 20;
+  }
+  .slider__button--next {
+    right: auto;
+    top: -55px;
+    left: 70px;
+  }
+  .slider__button--previous {
+    left: 20px;
+    top: -55px;
+  }
+}
+@media (min-width: 1440px) {
+  .slider {
+    margin-top: 0;
+  }
+  .slider .slider__crumbs-list {
+    top: -59px;
+  }
+  .slider__img-list {
+    left: -32%;
+  }
+  .slider__img-item {
+    width: auto;
+    margin-right: 32px;
+  }
+  .slider__img-item:last-child {
+    margin-right: 0;
+  }
+  .slider__button-list {
+    position: absolute;
+    top: -70px;
+    right: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 84px;
+  }
+  .slider__button {
+    position: relative;
+  }
+  .slider__button--next {
+    top: auto;
+    left: auto;
+  }
+  .slider__button--previous {
+    left: auto;
+    top: auto;
+  }
+}
 .slider__crumbs-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -543,7 +630,7 @@ input[type=radio].visually-hidden {
   left: 7px;
   width: 11px;
   height: 11px;
-  background-color: #D8D8D8;
+  background-color: #d8d8d8;
   border-radius: 50%;
 }
 .slider__crumbs-item--active {
@@ -557,8 +644,6 @@ input[type=radio].visually-hidden {
 }
 
 .slider__button {
-  position: absolute;
-  z-index: 10;
   margin: 0;
   padding: 0;
   width: 38px;
@@ -569,13 +654,7 @@ input[type=radio].visually-hidden {
   background-color: transparent;
   outline: none;
 }
-.slider__button--next {
-  right: 20px;
-  top: 20px;
-}
 .slider__button--previous {
-  left: 20px;
-  top: 20px;
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -600,4 +679,17 @@ input[type=radio].visually-hidden {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+.slider__button:hover, .slider__button:focus {
+  background-color: #E89F71;
+}
+.slider__button:hover::after, .slider__button:hover::before, .slider__button:focus::after, .slider__button:focus::before {
+  background-color: #ffffff;
+}
+.slider__button:active {
+  background-color: rgba(232, 159, 113, 0.1882352941);
+  border-color: rgba(232, 159, 113, 0.1882352941);
+}
+.slider__button:active::after, .slider__button:active::before {
+  background-color: #E89F71;
 }
