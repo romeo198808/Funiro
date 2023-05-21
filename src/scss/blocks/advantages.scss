@@ -1,0 +1,54 @@
+.advantages {
+  padding: 24px;
+  box-sizing: border-box;
+}
+.advantages__wrapper {
+}
+.advantages__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.advantages__item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-top: 60px;
+
+  font-size: 14px;
+  color: #898989;
+  &--quality {
+    background-image: url("../img/icons/quality.svg");
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: 0 10px;
+  }
+  &--warrany {
+    background-image: url("../img/icons/warrany.svg");
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: 0 10px;
+  }
+  &--shipping {
+    background-image: url("../img/icons/shipping.svg");
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: 0 10px;
+  }
+  &--support {
+    background-image: url("../img/icons/support.svg");
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: 0 10px;
+  }
+}
+.advantages__item--quality {
+}
+.advantages__title {
+  color: #000000;
+}
+.advantages__item--warrany {
+}
+.advantages__item--shipping {
+}
+.advantages__item--support {
+}
