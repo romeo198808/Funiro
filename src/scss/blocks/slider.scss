@@ -70,6 +70,18 @@
       top: -55px;
     }
   }
+  .slider__info {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+
+    width: 294px;
+  }
+  .slider__advertisement {
+    position: absolute;
+    left: 50px;
+    bottom: 40px;
+  }
 }
 @media (min-width: $desktop) {
   .slider {
@@ -80,7 +92,7 @@
   }
 
   .slider__img-list {
-    left: -32%;
+    left: 507px;
   }
   .slider__img-item {
     width: auto;
@@ -108,5 +120,12 @@
       left: auto;
       top: auto;
     }
+  }
+  .slider__advertisement {
+    bottom: 80px;
+  }
+  .slider__info {
+    left: 1107px;
+    right: auto;
   }
 }
