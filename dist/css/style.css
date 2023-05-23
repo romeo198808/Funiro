@@ -29,6 +29,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
+  color: #3a3a3a;
 }
 
 img {
@@ -95,6 +96,12 @@ input[type=radio].visually-hidden {
   -webkit-transition: all 150ms linear;
   -o-transition: all 150ms linear;
   transition: all 150ms linear;
+}
+
+.main__title {
+  font-size: 40px;
+  line-height: 120%;
+  text-transform: capitalize;
 }
 
 .header {
