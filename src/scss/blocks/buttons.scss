@@ -16,3 +16,23 @@
     transition: all 150ms linear;
   }
 }
+.button__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  box-sizing: border-box;
+
+  font-size: 20px;
+  text-transform: capitalize;
+  color: $buttonColor;
+
+  background-color: #ffffff;
+  border: 1px solid $buttonColor;
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: $buttonColor;
+    transition: all 150ms linear;
+  }
+}

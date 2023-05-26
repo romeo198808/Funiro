@@ -1,5 +1,11 @@
 .main__title {
-  font-size: 40px;
+  font-size: 30px;
   line-height: 120%;
   text-transform: capitalize;
+}
+
+@media (min-width: $tablet) {
+  .main__title {
+    font-size: 40px;
+  }
 }
