@@ -12,10 +12,10 @@
   & .slider__crumbs-list {
     position: absolute;
     z-index: 10;
-    top: 10px;
+    bottom: 400px;
     left: 50%;
 
-    margin-left: -84px;
+    margin-left: -69px;
   }
 }
 .slider__wrapper {
@@ -40,13 +40,12 @@
 .slider__button {
   position: absolute;
   z-index: 10;
+  bottom: 410px;
   &--next {
     right: 20px;
-    top: 10px;
   }
   &--previous {
     left: 20px;
-    top: 10px;
   }
 }
 
@@ -60,14 +59,14 @@
   }
   .slider__button {
     z-index: 20;
+    bottom: auto;
+    top: -55px;
     &--next {
       right: auto;
-      top: -55px;
       left: 70px;
     }
     &--previous {
       left: 20px;
-      top: -55px;
     }
   }
   .slider__info {

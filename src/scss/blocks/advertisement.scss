@@ -7,14 +7,16 @@
   box-sizing: border-box;
 }
 .advertisement__title {
-  margin: 0;
+  max-width: 300px;
+  margin: 0 auto;
 
   font-size: 26 px;
   line-height: 120%;
   text-align: center;
 }
 .advertisement__text {
-  margin-top: 16px;
+  max-width: 300px;
+  margin: 16px auto 0;
 
   line-height: 150%;
 }
