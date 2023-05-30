@@ -19,6 +19,11 @@
   font-weight: 700;
   font-style: normal;
 }
+*:focus {
+  outline: none;
+  border: 1px solid #E89F71;
+}
+
 body {
   position: relative;
   min-height: 100vh;
