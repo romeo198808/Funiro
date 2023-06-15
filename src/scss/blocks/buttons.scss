@@ -9,9 +9,12 @@
   color: #ffffff;
 
   background-color: $buttonColor;
-  &:hover span,
-  &:focus span {
-    transform: scale(1.2);
+  &:hover,
+  &:focus {
+    background-color: #ffffff;
+    border: 1px solid $buttonColor;
+
+    color: $buttonColor;
 
     transition: all 150ms linear;
   }
