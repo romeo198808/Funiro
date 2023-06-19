@@ -38,12 +38,15 @@
 }
 .rooms__img {
   display: block;
-  width: 100%;
 }
 .rooms__slider {
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
+}
+.rooms__slider-main {
+  display: flex;
+  justify-content: center;
 }
 .rooms__slider-item {
   width: 70px;
