@@ -1515,6 +1515,38 @@ input[type=radio].visually-hidden {
   }
   .tips__slider-desk,
   .tips__slider-date {
-    padding: 0 16px;
+    padding: 0 4%;
+  }
+}
+@media (min-width: 1440px) {
+  .tips {
+    position: relative;
+    padding: 44px 76px;
+  }
+  .tips .slider__button-list {
+    position: static;
+  }
+  .tips .slider__button {
+    position: absolute;
+  }
+  .tips .slider__button--previous {
+    left: 76px;
+  }
+  .tips .slider__button--next {
+    right: 96px;
+  }
+  .tips__slider {
+    margin: 0;
+    padding-top: 32px;
+  }
+  .tips__slider-img {
+    margin: 0 auto;
+  }
+  .tips__slider-item {
+    padding-top: 10px;
+  }
+  .tips__slider-desk,
+  .tips__slider-date {
+    text-align: center;
   }
 }
