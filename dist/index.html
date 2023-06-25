@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hello, this is very interesting landing page about rooms">
-  <link rel="stylesheet" href="css/style.min.css?_v=20230623120132">
+  <link rel="stylesheet" href="css/style.min.css?_v=20230625175258">
   <title>Funiro-Landing Page</title>
 </head>
   <body>
@@ -120,7 +120,7 @@
     <h2 class="slider__title visually-hidden">Slider</h2>
     <div class="slider__wrapper">
       <ul class="slider__img-list">
-        <li class="slider__img-item">
+        <li class="slider__img-item slider__img-item--active">
           <picture>
             <source
               media="(min-width: 1440px)"
@@ -278,14 +278,7 @@
         </button>
       </li>
     </ul>
-    <ul class="slider__crumbs-list">
-      <li class="slider__crumbs-item slider__crumbs-item--active" tabindex="0">
-        1
-      </li>
-      <li class="slider__crumbs-item" tabindex="0">2</li>
-      <li class="slider__crumbs-item" tabindex="0">3</li>
-      <li class="slider__crumbs-item" tabindex="0">4</li>
-    </ul>
+    <ul class="slider__crumbs-list"></ul>
 
     <div class="slider__info info">
       <p class="info__name">Bohaus</p>
@@ -1029,23 +1022,27 @@
     </div>
   </div>
 </footer>
- <template class="production__hover">
-  <button type="button" class="products__button button__main">
-    Add to cart
-  </button>
-  <a href="" class="products__share">
-    <svg class="icons__img--share" width="20px" height="20px">
-      <use xlink:href="img/icons/sprite.svg#icon-share"></use>
-    </svg>
-    Share
-  </a>
-  <a href="" class="products__like">
-    <svg class="icons__img--like" width="20px" height="20px">
-      <use xlink:href="img/icons/sprite.svg#icon-favorite"></use>
-    </svg>
-  </a>
+ <template class="templates">
+  <div class="production__hover">
+    <button type="button" class="products__button button__main">
+      Add to cart
+    </button>
+    <a href="" class="products__share">
+      <svg class="icons__img--share" width="20px" height="20px">
+        <use xlink:href="img/icons/sprite.svg#icon-share"></use>
+      </svg>
+      Share
+    </a>
+    <a href="" class="products__like">
+      <svg class="icons__img--like" width="20px" height="20px">
+        <use xlink:href="img/icons/sprite.svg#icon-favorite"></use>
+      </svg>
+    </a>
+  </div>
+
+  <li class="slider__crumbs-item" tabindex="0"></li>
 </template>
 
-    <script src="js/app.min.js?_v=20230623120132"></script>
+    <script src="js/app.min.js?_v=20230625175258"></script>
   </body>
 </html>

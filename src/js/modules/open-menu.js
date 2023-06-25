@@ -1,19 +1,28 @@
-export function openMenu() {
-  const menuButton = document.querySelector(".menu__button");
-  const header = document.querySelector(".header");
-  const main = document.querySelector("body");
+"use strict";
+import { domElements } from "./domElements.js";
+import { renderMenuList } from "./renderMenuList.js";
 
-  menuButton.addEventListener("click", function (evt) {
-    evt.preventDefault;
-    let toggle = header.classList.contains("header--close");
-    if (toggle) {
-      header.classList.remove("header--close");
-      header.classList.add("header--open");
-      main.classList.add("lock");
-    } else {
-      header.classList.remove("header--open");
-      header.classList.add("header--close");
-      main.classList.remove("lock");
-    }
-  });
+export function openMenu() {
+  const screenWidth = window.screen.width;
+  if (screenWidth < 768) {
+    domElements.menuButton.addEventListener("click", function (evt) {
+      evt.preventDefault;
+
+      let toggle = domElements.header.classList.contains("header--close");
+      if (toggle) {
+        domElements.header.classList.remove("header--close");
+        domElements.header.classList.add("header--open");
+        domElements.main.classList.add("lock");
+
+        domElements.navList.addEventListener("click", renderMenuList);
+      } else {
+        domElements.header.classList.remove("header--open");
+        domElements.header.classList.add("header--close");
+        domElements.main.classList.remove("lock");
+        domElements.navList.removeEventListener("click", renderMenuList);
+      }
+    });
+  } else {
+    domElements.navList.addEventListener("click", renderMenuList);
+  }
 }

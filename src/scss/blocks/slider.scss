@@ -14,8 +14,6 @@
     z-index: 10;
     bottom: 400px;
     left: 50%;
-
-    margin-left: -69px;
   }
 }
 .slider__wrapper {
@@ -27,6 +25,8 @@
   display: flex;
   position: relative;
   left: 0;
+
+  transition: all 500ms linear;
 }
 .slider__img-item {
   width: 100%;

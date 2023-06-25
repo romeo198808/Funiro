@@ -8,6 +8,10 @@
   align-items: center;
 
   margin-top: 5px;
+  &:hover,
+  &:focus {
+    border: none;
+  }
 }
 .user__icon {
   width: 24px;
@@ -22,12 +26,10 @@
   }
   &--favorites:hover {
     fill: red;
-
   }
- 
 }
 
-@media(min-width: $tablet){
+@media (min-width: $tablet) {
   .user__list {
     display: flex;
 
@@ -37,7 +39,7 @@
     margin: 0;
   }
 }
-@media(min-width: $desktop){
+@media (min-width: $desktop) {
   .user__list {
     width: 155px;
     height: 40px;

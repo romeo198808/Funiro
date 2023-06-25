@@ -1,5 +1,11 @@
+"use strict";
+
 import * as filesFunctions from "./modules/functions.js";
 import * as openMenu from "./modules/open-menu.js";
+import { slider } from "./modules/mainSlider.js";
 
-filesFunctions.isWebp();
-openMenu.openMenu();
+(function () {
+  filesFunctions.isWebp();
+  openMenu.openMenu();
+  slider.sliderGo();
+})();

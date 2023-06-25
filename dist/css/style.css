@@ -263,13 +263,16 @@ input[type=radio].visually-hidden {
   display: inline-block;
   padding-right: 30px;
 }
+.nav__link:hover, .nav__link:focus {
+  border: none;
+}
 .nav__link--open::after, .nav__link--open::before {
   content: "";
   width: 8px;
   height: 2px;
   position: absolute;
   top: 12px;
-  background-color: #3A3A3A;
+  background-color: #3a3a3a;
 }
 .nav__link::after {
   right: 5px;
@@ -283,11 +286,6 @@ input[type=radio].visually-hidden {
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
-.nav__link--open:hover + .nav__inner-list, .nav__link--open:focus + .nav__inner-list {
-  position: relative;
-  left: 0;
-  opacity: 1;
-}
 
 .nav__inner-list {
   position: absolute;
@@ -300,7 +298,7 @@ input[type=radio].visually-hidden {
   -o-transition: left 0.3s ease;
   transition: left 0.3s ease;
 }
-.nav__inner-list:hover, .nav__inner-list:focus {
+.nav__inner-list--open {
   position: relative;
   left: 0;
   opacity: 1;
@@ -405,9 +403,12 @@ input[type=radio].visually-hidden {
   .nav__list {
     padding: 43px 0 0 0;
     min-height: auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .nav__link {
+    margin-top: 10px;
   }
   .nav__item {
     margin-right: 25px;
@@ -418,9 +419,6 @@ input[type=radio].visually-hidden {
     top: auto;
     width: 42.12%;
     margin-left: 15px;
-  }
-  .nav__link--open:hover + .nav__inner-list, .nav__link--open:focus + .nav__inner-list {
-    position: absolute;
   }
   .nav__inner-list {
     position: absolute;
@@ -508,6 +506,9 @@ input[type=radio].visually-hidden {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 5px;
+}
+.user__link:hover, .user__link:focus {
+  border: none;
 }
 
 .user__icon {
@@ -682,7 +683,6 @@ input[type=radio].visually-hidden {
   z-index: 10;
   bottom: 400px;
   left: 50%;
-  margin-left: -69px;
 }
 
 .slider__wrapper {
@@ -697,6 +697,9 @@ input[type=radio].visually-hidden {
   display: flex;
   position: relative;
   left: 0;
+  -webkit-transition: all 500ms linear;
+  -o-transition: all 500ms linear;
+  transition: all 500ms linear;
 }
 
 .slider__img-item {
