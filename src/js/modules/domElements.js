@@ -6,6 +6,7 @@ export const domElements = {
   main: document.querySelector("body"),
   navList: document.querySelector(".nav__list"),
   mainSlider: document.querySelector(".slider"),
+  productList: document.querySelector(".products__list"),
 };
 
 export const mainSlider = {

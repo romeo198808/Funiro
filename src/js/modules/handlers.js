@@ -58,7 +58,6 @@ export const eventHandler = {
           );
         }
       }
-      console.log(eventHandler.sliderToggles);
       this.counter++;
     }
   },

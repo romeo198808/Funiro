@@ -520,6 +520,10 @@ input[type=radio].visually-hidden {
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
+.user__icon--favorites {
+  stroke: #262f56;
+  fill: transparent;
+}
 .user__icon:hover {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
@@ -718,7 +722,7 @@ input[type=radio].visually-hidden {
 .slider__button {
   position: absolute;
   z-index: 10;
-  bottom: 410px;
+  bottom: 470px;
 }
 .slider__button--next {
   right: 20px;
@@ -1083,6 +1087,75 @@ input[type=radio].visually-hidden {
   margin-top: 20px;
 }
 
+.production__hover {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(58, 58, 58, 0.7);
+  border: 5px solid #ffffff;
+}
+
+.products__button {
+  width: 70%;
+  margin-top: 60%;
+  margin-bottom: 24px;
+  background-color: #fff;
+  opacity: 1;
+  font-size: 18px;
+}
+
+.products__share,
+.products__like {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 42%;
+  color: #ffffff;
+}
+.products__share:hover, .products__share:focus,
+.products__like:hover,
+.products__like:focus {
+  color: #E89F71;
+}
+.products__share:hover .icons__img, .products__share:focus .icons__img,
+.products__like:hover .icons__img,
+.products__like:focus .icons__img {
+  stroke: #E89F71;
+  fill: #E89F71;
+}
+
+.icons__img--share {
+  margin-right: 8px;
+  fill: #fff;
+}
+
+.icons__img--like {
+  margin-right: 8px;
+  fill: transparent;
+  stroke: #fff;
+}
+
 @media (min-width: 768px) {
   .products__list {
     -webkit-box-pack: center;
@@ -1100,6 +1173,10 @@ input[type=radio].visually-hidden {
   .products__more {
     width: 245px;
     margin-top: 16px;
+  }
+  .production__hover {
+    padding: 16px;
+    border-width: 16px;
   }
 }
 @media (min-width: 1440px) {

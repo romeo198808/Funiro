@@ -21,6 +21,11 @@
   fill: $secondColor;
   transition: all 0.2s linear;
 
+  &--favorites {
+    stroke: #262f56;
+    fill: transparent;
+  }
+
   &:hover {
     transform: scale(1.2);
   }
