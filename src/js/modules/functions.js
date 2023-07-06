@@ -1,3 +1,4 @@
+import { documentSize } from "./domElements.js";
 export function isWebp(params) {
   function testWebP(callback) {
     var webP = new Image();
