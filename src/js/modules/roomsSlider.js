@@ -116,6 +116,10 @@ const roomsSliderHandler = {
           roomsSlider.slides[i].classList.add("rooms__slider-img--active");
         }
       }
+    } else if (target === roomsSlider.sliderNext) {
+      roomsSliderHandler.sliderNext();
+    } else if (target === roomsSlider.sliderPrevious) {
+      roomsSliderHandler.sliderPrevious();
     }
   },
   sliderPreviewHandler: function () {
@@ -143,5 +147,45 @@ const roomsSliderHandler = {
       data.sliderToggles[i].classList.remove("slider__crumbs-item--active");
     }
     data.sliderToggles[ind].classList.add("slider__crumbs-item--active");
+  },
+  sliderNext: function () {
+    if (data.counter < roomsSlider.slides.length - 1) {
+      roomsSlider.sliderList.style.left =
+        data.start - data.sliderWidth * (data.counter + 1) + "px";
+
+      for (let i = 0; i < data.sliderToggles.length; i++) {
+        if (
+          data.sliderToggles[i].classList.contains(
+            "slider__crumbs-item--active"
+          )
+        ) {
+          data.sliderToggles[i].classList.remove("slider__crumbs-item--active");
+          data.sliderToggles[data.counter + 1].classList.add(
+            "slider__crumbs-item--active"
+          );
+        }
+      }
+      data.counter++;
+    }
+  },
+  sliderPrevious: function () {
+    if (data.counter > 0) {
+      roomsSlider.sliderList.style.left =
+        data.start - data.sliderWidth * (data.counter - 1) + "px";
+
+      for (let i = 0; i < data.sliderToggles.length; i++) {
+        if (
+          data.sliderToggles[i].classList.contains(
+            "slider__crumbs-item--active"
+          )
+        ) {
+          data.sliderToggles[i].classList.remove("slider__crumbs-item--active");
+        }
+      }
+      data.sliderToggles[data.counter - 1].classList.add(
+        "slider__crumbs-item--active"
+      );
+      data.counter--;
+    }
   },
 };

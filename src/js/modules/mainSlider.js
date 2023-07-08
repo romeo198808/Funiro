@@ -121,7 +121,6 @@ const sliderControlHandler = {
     }
   },
   sliderToggle: function (target, slider, dataSlider) {
-    console.log(dataSlider.start);
     for (let i = 0; i < dataSlider.sliderToggles.length; i++) {
       if (
         dataSlider.sliderToggles[i].classList.contains(
