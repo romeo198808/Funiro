@@ -57,3 +57,19 @@ export const roomsSlider = {
     .querySelector(".rooms__wrap")
     .querySelector(".slider__crumbs-list"),
 };
+export const tipsSlider = {
+  mainSlider: document.querySelector(".tips__wrapper"),
+  slides: document.querySelectorAll(".tips__slider-img"),
+
+  sliderNext: document
+    .querySelector(".tips__wrapper")
+    .querySelector(".slider__button--next"),
+
+  sliderPrevious: document
+    .querySelector(".tips__wrapper")
+    .querySelector(".slider__button--previous"),
+
+  sliderList: document
+    .querySelector(".tips__wrapper")
+    .querySelector(".tips__slider"),
+};

@@ -1,6 +1,6 @@
 "use strict";
 import { slider } from "./mainSlider.js";
-import { documentSize, domElements, roomsSlider } from "./domElements.js";
+import { documentSize, roomsSlider } from "./domElements.js";
 
 export function roomsSliderFunction(sl) {
   slider.insertCrumbList(sl);
@@ -165,6 +165,18 @@ const roomsSliderHandler = {
           );
         }
       }
+      for (let i = 0; i < roomsSlider.slides.length; i++) {
+        roomsSlider.slides[i].offsetParent.classList.remove(
+          "rooms__slider-item--active"
+        );
+        roomsSlider.slides[i].classList.remove("rooms__slider-img--active");
+      }
+      roomsSlider.slides[data.counter + 1].offsetParent.classList.add(
+        "rooms__slider-item--active"
+      );
+      roomsSlider.slides[data.counter + 1].classList.add(
+        "rooms__slider-img--active"
+      );
       data.counter++;
     }
   },
@@ -184,6 +196,18 @@ const roomsSliderHandler = {
       }
       data.sliderToggles[data.counter - 1].classList.add(
         "slider__crumbs-item--active"
+      );
+      for (let i = 0; i < roomsSlider.slides.length; i++) {
+        roomsSlider.slides[i].offsetParent.classList.remove(
+          "rooms__slider-item--active"
+        );
+        roomsSlider.slides[i].classList.remove("rooms__slider-img--active");
+      }
+      roomsSlider.slides[data.counter - 1].offsetParent.classList.add(
+        "rooms__slider-item--active"
+      );
+      roomsSlider.slides[data.counter - 1].classList.add(
+        "rooms__slider-img--active"
       );
       data.counter--;
     }
